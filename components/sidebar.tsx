@@ -45,7 +45,7 @@ const Sidebar = () => {
         it needs the height 100% of its container if not scroll bar ONLY FOR PLAYLIST SECTION wont work otherwise */}
       <Box paddingY="20px" height="100%">
         <Box width="120px" marginBottom="20px" paddingX="20px">
-          <NextImage src="/logo.svg" height={60} width={120} alt="logo" />
+          <NextImage src="/logo.jpg" height={60} width={120} alt="logo" />
         </Box>
         <Box marginBottom="20px">
           <List spacing={2}>

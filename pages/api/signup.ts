@@ -20,8 +20,6 @@ export default async (req: NextApiRequest, res: NextApiResponse) => {
       },
     });
   } catch (error) {
-    // eslint-disable-next-line no-console
-    console.error(error);
     res.status(401);
     res.json({ error: "User already exists" });
     return;
