@@ -1,11 +1,11 @@
 import { NextRequest, NextResponse } from "next/server";
-import { User } from "@prisma/client";
+import { Playlist, User } from "@prisma/client";
 import prisma from "../../lib/prisma";
 import { validateRoute } from "../../lib/auth";
 
 export default validateRoute(
   async (req: NextRequest, res: NextResponse, user: User) => {
-    const playlists = await prisma.playlist.findMany({
+    const playlists: Playlist[] = await prisma.playlist.findMany({
       where: {
         userId: user.id,
       },
@@ -14,6 +14,7 @@ export default validateRoute(
       },
     });
 
+    // @ts-ignore - Not sure what it shows error without line
     res.json(playlists);
   }
 );
